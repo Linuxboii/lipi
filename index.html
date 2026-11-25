@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lipi - Word counter and text cleanup</title>
+  <meta name="description" content="Count words, characters and reading time, then clean text in one click: change case, remove duplicate lines, sort, join broken lines, strip HTML. Works offline in your browser.">
+  <link rel="stylesheet" href="base.css">
+  <style>
+    :root { --accent: #be123c; }
+    @media (prefers-color-scheme: dark) { :root { --accent: #fb7185; --accent-ink: #2a0610; } }
+    textarea#text { min-height: 46vh; font-family: var(--sans); font-size: 16px; line-height: 1.6; }
+    .tools { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tools button { font-size: 14px; padding: 7px 12px; font-weight: 500; }
+    .layout { display: grid; gap: 20px; grid-template-columns: 1fr; }
+    @media (min-width: 900px) { .layout { grid-template-columns: 1fr 280px; align-items: start; } }
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <h1>Lipi</h1>
+    <p>Paste any text. See the counts, then clean it up in one click. Nothing you type leaves your browser.</p>
+  </div></header>
+  <main><div class="wrap layout">
+    <section class="panel stack">
+      <label class="field" for="text">Your text</label>
+      <textarea id="text" spellcheck="true" placeholder="Paste or type here"></textarea>
+      <div class="tools" id="tools" aria-label="Transforms"></div>
+      <div class="row">
+        <button class="primary" id="copy" type="button">Copy text</button>
+        <button id="undo" type="button" disabled>Undo</button>
+        <button id="clear" type="button" class="ghost">Clear</button>
+      </div>
+    </section>
+    <aside class="panel stack" aria-live="polite">
+      <h2>Counts</h2>
+      <div class="stats" style="grid-template-columns:1fr 1fr">
+        <div class="stat"><b id="words">0</b><span>Words</span></div>
+        <div class="stat"><b id="chars">0</b><span>Characters</span></div>
+        <div class="stat"><b id="nospace">0</b><span>Without spaces</span></div>
+        <div class="stat"><b id="sentences">0</b><span>Sentences</span></div>
+        <div class="stat"><b id="paragraphs">0</b><span>Paragraphs</span></div>
+        <div class="stat"><b id="lines">0</b><span>Lines</span></div>
+        <div class="stat"><b id="read">0 min</b><span>Reading time</span></div>
+        <div class="stat"><b id="speak">0 min</b><span>Speaking time</span></div>
+      </div>
+      <p class="muted small">Reading at 238 words a minute, speaking at 140. Your draft is kept on this device only, so a refresh does not lose it.</p>
+    </aside>
+  </div></main>
+  <footer class="bottom"><div class="wrap">
+    <span>Lipi. Free and open source.</span>
+    <span><a href="https://github.com/Linuxboii/lipi">Source</a> &nbsp; <a href="https://sushanth.avlokai.com">Made by Sushanth Kasturi</a></span>
+  </div></footer>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
