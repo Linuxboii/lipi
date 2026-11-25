@@ -17,6 +17,14 @@ Word counter and one-click text cleanup.
 
 Unicode aware: counts Hindi, Tamil, Arabic and other scripts correctly.
 
+## Demand
+
+Semrush estimates wordcounter.net at about 11 million visits a month.
+
+- [Semrush: wordcounter.net](https://it.semrush.com/website/wordcounter.net/overview/)
+
+These figures measure demand for the task, from existing tools. They are third-party estimates or company claims, not usage of this tool.
+
 ## Privacy
 
 Everything runs in your browser. There is no backend, no analytics and no account. Nothing you enter is uploaded.
